@@ -3,11 +3,7 @@ import { Link } from "react-router-dom";
 import {
   Users,
   Layers,
-  Cpu,
   Activity,
-  Wrench,
-  Settings,
-  ChevronRight,
   ArrowRight,
   Shield,
   CheckCircle2,
@@ -15,9 +11,45 @@ import {
   Gauge,
   Hammer,
   LayoutGrid,
+  Cpu,
+  Settings,
+  ChevronRight,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+// Slide 1 — Project Running Process
+import processFlowImg from "@/assets/ppt/image1.jpg";
+// Slide 2 — DFM
+import dfmImg from "@/assets/ppt/image3.png";
+// Slide 3 — Grill Mesh
+import grillMovingHalfImg from "@/assets/ppt/image4.png";
+import grillFixedHalfImg from "@/assets/ppt/image5.png";
+import grillTopViewImg from "@/assets/ppt/image8.png";
+// Slide 4 — Mould Base & Assembly
+import mouldBaseImg from "@/assets/ppt/image9.png";
+import mouldAssemblyImg from "@/assets/ppt/image10.png";
+import mouldPhysicalImg from "@/assets/ppt/image11.jpg";
+// Slide 5 — Motor Housing
+import motorHousingImg1 from "@/assets/ppt/image13.jpg";
+import motorHousingImg2 from "@/assets/ppt/image14.jpg";
+// Slide 6 — Moldflow
+import moldflowResultsImg from "@/assets/ppt/image15.png";
+import moldflowCoolingImg from "@/assets/ppt/image16.png";
+// Slide 7 — VMC Machines
+import haasImg from "@/assets/ppt/image20.jpg";
+import feelerImg from "@/assets/ppt/image21.jpg";
+// Slide 8 — Press Tool (exploded mould assembly)
+import pressToolAssemblyImg from "@/assets/ppt/image40.png";
+// Slide 9 — Transfer Die
+import transferDie1Img from "@/assets/ppt/image41.jpg";
+import transferDie2Img from "@/assets/ppt/image47.jpg";
+// Slide 10 — Plate Type Dies
+import plateDie1Img from "@/assets/ppt/image53.jpg";
+import plateDie2Img from "@/assets/ppt/image55.jpg";
+// Slide 11 — Trial Press
+import trialPressImg from "@/assets/ppt/image60.jpg";
+import trialPressActionImg from "@/assets/ppt/image61.jpg";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -78,42 +110,10 @@ const haasSpecs = [
   { no: "12", desc: "Coolant Tank", value: "250 Ltrs" },
 ];
 
-const transferDieStages = [
-  { label: "Draw Die", desc: "Initial forming of raw sheet into the target profile with controlled material flow." },
-  { label: "Trim Die", desc: "Precision trimming of excess material to achieve exact part boundaries." },
-  { label: "Forming Die", desc: "Secondary forming operations to achieve complex geometries and tight tolerances." },
-  { label: "Restrike Die", desc: "Final restrike to correct springback and lock in dimensional accuracy." },
-];
-
-const plateTypeDies = [
-  { label: "Pierce Die", desc: "High-precision hole piercing with engineered punch-die clearances." },
-  { label: "Crash Form Die", desc: "Rapid forming operations for flanges and complex bends in a single stroke." },
-  { label: "Forming Die", desc: "Multi-stage forming for complex panel geometries and profile accuracy." },
-  { label: "Piercing Die", desc: "Simultaneous multi-hole piercing for high-volume panel production." },
-];
-
 const trialPresses = [
-  {
-    capacity: "160 Ton",
-    type: "Power Press with Cushion",
-    bedSize: "600 × 600 mm",
-    stroke: "300 mm",
-    height: "—",
-  },
-  {
-    capacity: "100 Ton",
-    type: "Mechanical Press",
-    bedSize: "1,150 × 680 mm",
-    stroke: "200 mm",
-    height: "360 mm die height",
-  },
-  {
-    capacity: "80 Ton",
-    type: "Hydraulic Press with Cushion",
-    bedSize: "750 × 600 mm",
-    stroke: "100 mm",
-    height: "—",
-  },
+  { capacity: "160 Ton", type: "Power Press with Cushion", bedSize: "600 × 600 mm", stroke: "300 mm", dieHeight: null },
+  { capacity: "100 Ton", type: "Mechanical Press", bedSize: "1,150 × 680 mm", stroke: "200 mm", dieHeight: "360 mm" },
+  { capacity: "80 Ton", type: "Hydraulic Press with Cushion", bedSize: "750 × 600 mm", stroke: "100 mm", dieHeight: null },
 ];
 
 const closingPoints = [
@@ -156,7 +156,7 @@ const MouldDesign = () => {
             <p className="text-silver max-w-2xl mx-auto text-[15px] leading-relaxed mb-8">
               Our Plastic Mould Design division delivers end-to-end tooling solutions — from DFM analysis and
               complex mould design to in-house VMC machining, Moldflow validation, and full-scale trial press
-              runs. Every tool we design is engineered to perform exactly on your production floor.
+              runs. Every tool we design performs exactly on your production floor.
             </p>
             <div className="inline-flex items-center gap-3 border border-primary/30 bg-primary/5 rounded-lg px-6 py-3">
               <CheckCircle2 className="w-4 h-4 text-accent-orange-2 shrink-0" />
@@ -168,10 +168,10 @@ const MouldDesign = () => {
         </div>
       </section>
 
-      {/* ── Project Management ── */}
+      {/* ── Project Running Process ── */}
       <section className="relative z-[1] py-20 px-8 md:px-16 bg-accent text-primary-foreground">
         <div className="max-w-6xl mx-auto">
-          <motion.div {...fadeUp} className="text-center mb-14">
+          <motion.div {...fadeUp} className="text-center mb-12">
             <SectionLabelLight label="Project Running Process" />
             <h2 className="font-display text-3xl md:text-4xl font-extrabold text-primary-foreground mb-4">
               DEDICATED PROJECT MANAGEMENT
@@ -184,23 +184,11 @@ const MouldDesign = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {[
-              {
-                icon: Users,
-                title: "Dedicated Managers",
-                desc: "A single, consistent project manager per program — deep ownership, zero handover friction.",
-              },
-              {
-                icon: Activity,
-                title: "Seamless Execution",
-                desc: "Milestone-driven scheduling with real-time progress visibility and proactive bottleneck resolution.",
-              },
-              {
-                icon: Layers,
-                title: "Long-Term Partnership",
-                desc: "We invest in understanding your specifications so every subsequent program runs faster and tighter.",
-              },
+              { icon: Users, title: "Dedicated Managers", desc: "A single, consistent project manager per program — deep ownership, zero handover friction." },
+              { icon: Activity, title: "Seamless Execution", desc: "Milestone-driven scheduling with real-time progress visibility and proactive bottleneck resolution." },
+              { icon: Layers, title: "Long-Term Partnership", desc: "We invest in understanding your specifications so every subsequent program runs faster and tighter." },
             ].map((item, i) => (
               <motion.div
                 key={item.title}
@@ -215,60 +203,172 @@ const MouldDesign = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* Process Flowchart */}
+          <motion.div {...fadeUp}>
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-1 h-8 bg-primary rounded-full" />
+              <h3 className="font-display font-bold text-primary-foreground text-lg">Complete Program Flow — RFQ to After Service</h3>
+            </div>
+            <div className="rounded-xl border border-primary-foreground/15 overflow-hidden bg-white shadow-[0_0_40px_hsl(var(--primary)/0.15)]">
+              <img
+                src={processFlowImg}
+                alt="Project Running Process — RFQ to After Service flowchart"
+                className="w-full h-auto block"
+              />
+            </div>
+            <p className="mt-3 text-center font-mono text-[11px] tracking-[0.15em] uppercase text-primary-foreground/40">
+              Full program flow: Customer RFQ → Quote → Design → CNC → Machining → EDM → Trial → Shipment → After Service
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* ── DFM Analysis ── */}
       <section className="relative z-[1] py-20 px-8 md:px-16">
         <div className="max-w-6xl mx-auto">
-          <motion.div {...fadeUp} className="text-center mb-14">
+          <motion.div {...fadeUp} className="text-center mb-12">
             <SectionLabel label="DFM Analysis" />
             <h2 className="font-display text-3xl md:text-4xl font-extrabold text-foreground mb-4">
               DESIGN FOR MANUFACTURABILITY
             </h2>
             <p className="text-silver max-w-2xl mx-auto text-[15px] leading-relaxed">
               Before a single cavity is cut, we interrogate every geometry for manufacturability risk. Our DFM
-              reports identify wall thickness variations, draft angle deficiencies, sink mark risks, and gating
-              strategy — eliminating costly rework before tooling begins.
+              reports identify draw direction, undercut features, lifter & slider requirements, ejection
+              positions, and draft angle issues — eliminating costly rework before tooling begins.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
             {[
-              {
-                icon: Layers,
-                title: "Wall Thickness Analysis",
-                desc: "Identifying non-uniform walls that cause sink marks, warpage, and inconsistent fill.",
-              },
-              {
-                icon: ChevronRight,
-                title: "Draft Angle Verification",
-                desc: "Ensuring adequate draft on all vertical surfaces to guarantee clean part ejection every cycle.",
-              },
-              {
-                icon: Settings,
-                title: "Gating Strategy",
-                desc: "Optimal gate location and type selection to balance fill pressure and eliminate weld lines.",
-              },
-              {
-                icon: FlaskConical,
-                title: "Parting Line Definition",
-                desc: "Clean parting line placement that minimises flash, preserves aesthetics, and simplifies tooling.",
-              },
+              { icon: ChevronRight, title: "Draw Direction", desc: "Tooling draw direction and customer vehicle co-ordinate analysis with draft angle verification." },
+              { icon: Layers, title: "Undercut Analysis", desc: "Complete identification of lifters and sliders required — lifter and slider counts defined upfront." },
+              { icon: Settings, title: "Ejection Strategy", desc: "Tentative ejection pin positions established; straight lifters and ejector pin counts confirmed." },
+              { icon: FlaskConical, title: "Draft Analysis", desc: "Doghouse lifter clash detection and proposal generation before any steel is cut." },
             ].map((item, i) => (
               <motion.div
                 key={item.title}
                 {...fadeUpFast(i * 0.1)}
-                className="bg-card border border-border rounded-lg p-6 hover:border-primary/30 transition-colors"
+                className="bg-card border border-border rounded-lg p-5 hover:border-primary/30 transition-colors"
               >
-                <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
-                    <item.icon className="w-4 h-4 text-accent-orange-2" />
-                  </div>
-                  <div>
-                    <h3 className="font-display font-bold text-foreground text-base mb-1">{item.title}</h3>
-                    <p className="text-silver text-sm leading-relaxed">{item.desc}</p>
-                  </div>
+                <div className="w-11 h-11 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center mb-4">
+                  <item.icon className="w-4 h-4 text-accent-orange-2" />
+                </div>
+                <h3 className="font-display font-bold text-foreground text-base mb-2">{item.title}</h3>
+                <p className="text-silver text-sm leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* DFM Full Example */}
+          <motion.div {...fadeUp}>
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-1 h-8 bg-accent-orange-2 rounded-full" />
+              <h3 className="font-display font-bold text-foreground text-lg">DFM Example — Automotive Panel Analysis</h3>
+            </div>
+            <div className="rounded-xl border border-border overflow-hidden shadow-[0_0_40px_hsl(var(--primary)/0.06)] bg-card">
+              <img
+                src={dfmImg}
+                alt="DFM analysis example showing draw direction, undercut features, ejection and draft analysis"
+                className="w-full h-auto block"
+              />
+            </div>
+            <p className="mt-3 text-center font-mono text-[11px] tracking-[0.15em] uppercase text-silver/60">
+              Draw Direction · Undercut Features (Lifters 13 nos / Sliders 6 nos) · Ejection Layout · Draft Analysis
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Grill Mesh Mould Design ── */}
+      <section className="relative z-[1] py-20 px-8 md:px-16 bg-accent text-primary-foreground">
+        <div className="max-w-6xl mx-auto">
+          <motion.div {...fadeUp} className="text-center mb-12">
+            <SectionLabelLight label="Mould Design Example 01" />
+            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-primary-foreground mb-4">
+              GRILL MESH MOULD DESIGN
+            </h2>
+            <p className="text-primary-foreground/70 max-w-xl mx-auto text-[15px]">
+              A complete mould design with full mechanisms — fixed half, moving half, lifter systems,
+              and ejection layout — engineered to exact production specification.
+            </p>
+          </motion.div>
+
+          {/* Specs bar */}
+          <motion.div {...fadeUpFast(0)} className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-10">
+            {grillMeshSpecs.map((spec) => (
+              <div key={spec.label} className="bg-accent/60 border border-primary-foreground/10 rounded-lg p-4 text-center">
+                <p className="font-mono text-[10px] tracking-[0.12em] uppercase text-primary mb-1">{spec.label}</p>
+                <p className="font-display font-bold text-primary-foreground text-lg">{spec.value}</p>
+              </div>
+            ))}
+          </motion.div>
+
+          {/* 3-image gallery */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <motion.div {...fadeUpFast(0)} className="rounded-xl border border-primary-foreground/15 overflow-hidden bg-[#1a1f2e]">
+              <div className="bg-accent/40 px-4 py-2.5 border-b border-primary-foreground/10">
+                <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-primary">Moving Half — Ejector System</p>
+              </div>
+              <img src={grillMovingHalfImg} alt="Grill Mesh moving half with ejector system" className="w-full h-auto block" />
+            </motion.div>
+            <motion.div {...fadeUpFast(0.1)} className="rounded-xl border border-primary-foreground/15 overflow-hidden bg-[#1a1f2e]">
+              <div className="bg-accent/40 px-4 py-2.5 border-b border-primary-foreground/10">
+                <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-primary">Fixed Half — Complete Assembly</p>
+              </div>
+              <img src={grillFixedHalfImg} alt="Grill Mesh fixed half complete assembly" className="w-full h-auto block" />
+            </motion.div>
+            <motion.div {...fadeUpFast(0.2)} className="rounded-xl border border-primary-foreground/15 overflow-hidden bg-[#1a1f2e]">
+              <div className="bg-accent/40 px-4 py-2.5 border-b border-primary-foreground/10">
+                <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-primary">Moving Half — Top View</p>
+              </div>
+              <img src={grillTopViewImg} alt="Grill Mesh moving half top view with operator side labels" className="w-full h-auto block" />
+            </motion.div>
+          </div>
+
+          <div className="flex flex-wrap gap-2 mt-6 justify-center">
+            {["Fixed Half", "Moving Half", "Complete Mold Mechanisms", "Lifter System", "300 Lbs. Part"].map((tag) => (
+              <span key={tag} className="font-mono text-[10px] tracking-wider uppercase px-3 py-1 rounded border border-accent-orange-2/30 text-accent-orange-2 bg-accent-orange-2/5">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Mould Base & Assembly ── */}
+      <section className="relative z-[1] py-20 px-8 md:px-16">
+        <div className="max-w-6xl mx-auto">
+          <motion.div {...fadeUp} className="text-center mb-12">
+            <SectionLabel label="Mould Base & Assembly" />
+            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-foreground mb-4">
+              FROM CAD TO MACHINED STEEL
+            </h2>
+            <p className="text-silver max-w-xl mx-auto text-[15px]">
+              Our mould bases are precision-machined in-house and assembled to tight tolerances — every component
+              verified before first trial.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { img: mouldBaseImg, label: "Mould Base", caption: "Precision machined mould base — fixed half" },
+              { img: mouldAssemblyImg, label: "Mould Assembly", caption: "Complete mould assembly with slide rail mechanism" },
+              { img: mouldPhysicalImg, label: "Physical Mould", caption: "Assembled mould ready for trial press run" },
+            ].map((item, i) => (
+              <motion.div
+                key={item.label}
+                {...fadeUpFast(i * 0.1)}
+                className="rounded-xl border border-border overflow-hidden bg-card hover:border-primary/30 transition-colors"
+              >
+                <div className="bg-card/80 px-4 py-2.5 border-b border-border">
+                  <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-accent-orange-2">{item.label}</p>
+                </div>
+                <div className="bg-muted/30 flex items-center justify-center p-2">
+                  <img src={item.img} alt={item.caption} className="w-full h-auto block rounded" />
+                </div>
+                <div className="px-4 py-3">
+                  <p className="text-silver text-xs leading-relaxed">{item.caption}</p>
                 </div>
               </motion.div>
             ))}
@@ -276,42 +376,33 @@ const MouldDesign = () => {
         </div>
       </section>
 
-      {/* ── Mould Design Examples ── */}
+      {/* ── Motor Housing Mould ── */}
       <section className="relative z-[1] py-20 px-8 md:px-16 bg-accent text-primary-foreground">
         <div className="max-w-6xl mx-auto">
-          <motion.div {...fadeUp} className="text-center mb-14">
-            <SectionLabelLight label="Mould Design Examples" />
+          <motion.div {...fadeUp} className="text-center mb-12">
+            <SectionLabelLight label="Mould Design Example 02" />
             <h2 className="font-display text-3xl md:text-4xl font-extrabold text-primary-foreground mb-4">
-              ENGINEERED FOR REAL-WORLD PRODUCTION
+              MOTOR HOUSING MOULD
             </h2>
             <p className="text-primary-foreground/70 max-w-xl mx-auto text-[15px]">
-              From complete mould mechanisms to multi-cavity high-glass-fibre tools — our design portfolio speaks
-              for itself.
+              A complex 2-cavity mould in high-glass-fibre PA66+30GF — engineered for structural integrity
+              and long-run production stability.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Grill Mesh */}
-            <motion.div {...fadeUpFast(0)} className="bg-accent/60 border border-primary-foreground/10 rounded-xl p-8 hover:border-primary/30 transition-colors">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
-                  <LayoutGrid className="w-5 h-5 text-accent-orange-2" />
-                </div>
-                <div>
-                  <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-primary mb-0.5">Example 01</p>
-                  <h3 className="font-display font-bold text-primary-foreground text-xl">Grill Mesh Mould Design</h3>
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-3 mb-6">
-                {grillMeshSpecs.map((spec) => (
-                  <div key={spec.label} className="bg-accent/60 border border-primary-foreground/10 rounded-lg p-3">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            {/* Specs */}
+            <motion.div {...fadeUpFast(0)}>
+              <div className="grid grid-cols-2 gap-4 mb-6">
+                {motorHousingSpecs.map((spec) => (
+                  <div key={spec.label} className="bg-accent/60 border border-primary-foreground/10 rounded-lg p-4">
                     <p className="font-mono text-[10px] tracking-[0.12em] uppercase text-primary mb-1">{spec.label}</p>
-                    <p className="font-display font-bold text-primary-foreground text-base">{spec.value}</p>
+                    <p className="font-display font-bold text-primary-foreground text-lg">{spec.value}</p>
                   </div>
                 ))}
               </div>
               <div className="flex flex-wrap gap-2">
-                {["Fixed Half", "Moving Half", "Complete Mold Mechanisms", "300 Lbs. Part"].map((tag) => (
+                {["Mould Base", "Mould Assembly", "High Glass Fibre", "Structural Grade", "2-Cavity Tool"].map((tag) => (
                   <span key={tag} className="font-mono text-[10px] tracking-wider uppercase px-3 py-1 rounded border border-accent-orange-2/30 text-accent-orange-2 bg-accent-orange-2/5">
                     {tag}
                   </span>
@@ -319,31 +410,19 @@ const MouldDesign = () => {
               </div>
             </motion.div>
 
-            {/* Motor Housing */}
-            <motion.div {...fadeUpFast(0.1)} className="bg-accent/60 border border-primary-foreground/10 rounded-xl p-8 hover:border-primary/30 transition-colors">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
-                  <Cpu className="w-5 h-5 text-accent-orange-2" />
+            {/* Photos */}
+            <motion.div {...fadeUpFast(0.1)} className="grid grid-cols-2 gap-4">
+              <div className="rounded-xl border border-primary-foreground/15 overflow-hidden">
+                <div className="bg-accent/40 px-3 py-2 border-b border-primary-foreground/10">
+                  <p className="font-mono text-[10px] tracking-[0.12em] uppercase text-primary">Assembly View</p>
                 </div>
-                <div>
-                  <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-primary mb-0.5">Example 02</p>
-                  <h3 className="font-display font-bold text-primary-foreground text-xl">Motor Housing Mould</h3>
+                <img src={motorHousingImg1} alt="Motor housing mould assembly" className="w-full h-auto block" />
+              </div>
+              <div className="rounded-xl border border-primary-foreground/15 overflow-hidden">
+                <div className="bg-accent/40 px-3 py-2 border-b border-primary-foreground/10">
+                  <p className="font-mono text-[10px] tracking-[0.12em] uppercase text-primary">Open View</p>
                 </div>
-              </div>
-              <div className="grid grid-cols-2 gap-3 mb-6">
-                {motorHousingSpecs.map((spec) => (
-                  <div key={spec.label} className="bg-accent/60 border border-primary-foreground/10 rounded-lg p-3">
-                    <p className="font-mono text-[10px] tracking-[0.12em] uppercase text-primary mb-1">{spec.label}</p>
-                    <p className="font-display font-bold text-primary-foreground text-base">{spec.value}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {["Mould Base", "Mould Assembly", "High Glass Fibre", "Structural Grade"].map((tag) => (
-                  <span key={tag} className="font-mono text-[10px] tracking-wider uppercase px-3 py-1 rounded border border-accent-orange-2/30 text-accent-orange-2 bg-accent-orange-2/5">
-                    {tag}
-                  </span>
-                ))}
+                <img src={motorHousingImg2} alt="Motor housing mould open showing cavity" className="w-full h-auto block" />
               </div>
             </motion.div>
           </div>
@@ -353,45 +432,60 @@ const MouldDesign = () => {
       {/* ── Moldflow Analysis ── */}
       <section className="relative z-[1] py-20 px-8 md:px-16">
         <div className="max-w-6xl mx-auto">
-          <motion.div {...fadeUp} className="text-center mb-14">
+          <motion.div {...fadeUp} className="text-center mb-12">
             <SectionLabel label="Simulation" />
             <h2 className="font-display text-3xl md:text-4xl font-extrabold text-foreground mb-4">
               MOLDFLOW ANALYSIS SUPPORT
             </h2>
             <p className="text-silver max-w-2xl mx-auto text-[15px] leading-relaxed">
               We simulate plastic flow before steel is cut. Our Moldflow analysis predicts fill imbalances,
-              pressure drops, weld line locations, and cooling time requirements — giving you a validated
-              tool design before any hard tooling spend.
+              pressure drops, weld line locations, cooling time requirements, and warpage — giving you a
+              validated tool design before any hard tooling spend.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              { icon: Activity, title: "Fill Analysis", desc: "Predict complete cavity fill and identify short-shot risks before tooling." },
-              { icon: Gauge, title: "Pressure Distribution", desc: "Validate injection pressure and clamp force requirements at machine level." },
-              { icon: FlaskConical, title: "Weld Line Prediction", desc: "Relocate weld lines away from structural and aesthetic zones proactively." },
-              { icon: Settings, title: "Cooling Optimisation", desc: "Design optimal cooling circuits to minimise cycle time and warpage." },
-            ].map((item, i) => (
-              <motion.div
-                key={item.title}
-                {...fadeUpFast(i * 0.1)}
-                className="bg-card border border-border rounded-lg p-6 hover:border-primary/30 transition-colors text-center"
-              >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center mb-4 mx-auto">
-                  <item.icon className="w-5 h-5 text-accent-orange-2" />
-                </div>
-                <h3 className="font-display font-bold text-foreground text-base mb-2">{item.title}</h3>
-                <p className="text-silver text-sm leading-relaxed">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
+          {/* Multi-part results */}
+          <motion.div {...fadeUp} className="mb-8">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-1 h-8 bg-accent-orange-2 rounded-full" />
+              <h3 className="font-display font-bold text-foreground text-lg">Flow & Warpage Analysis — Multi-Part Case Studies</h3>
+            </div>
+            <div className="rounded-xl border border-border overflow-hidden shadow-[0_0_40px_hsl(var(--primary)/0.06)] bg-card">
+              <img
+                src={moldflowResultsImg}
+                alt="Moldflow analysis results for IP, Front Door, Tail Lamp Housing and Head Lamp Housing"
+                className="w-full h-auto block"
+              />
+            </div>
+            <p className="mt-3 text-center font-mono text-[11px] tracking-[0.15em] uppercase text-silver/60">
+              IP · Front Door · Tail Lamp Housing · Head Lamp Housing — Flow, Warp & Cool Analysis
+            </p>
+          </motion.div>
+
+          {/* Cooling / Cycle Time */}
+          <motion.div {...fadeUp}>
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-1 h-8 bg-primary rounded-full" />
+              <h3 className="font-display font-bold text-foreground text-lg">Tool Validation — Cooling Circuit & Cycle Time Prediction</h3>
+            </div>
+            <div className="rounded-xl border border-border overflow-hidden shadow-[0_0_40px_hsl(var(--primary)/0.06)] bg-card">
+              <img
+                src={moldflowCoolingImg}
+                alt="Moldflow cooling analysis with cavity cooling, core cooling, and accurate cycle time prediction table"
+                className="w-full h-auto block"
+              />
+            </div>
+            <p className="mt-3 text-center font-mono text-[11px] tracking-[0.15em] uppercase text-silver/60">
+              Cavity Cooling · Core Cooling · Cycle Time: Injection 8s + Packing 15s + Cooling 22s + Ejection 15s = 60s Total
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* ── VMC Machines ── */}
       <section className="relative z-[1] py-20 px-8 md:px-16 bg-accent text-primary-foreground">
         <div className="max-w-6xl mx-auto">
-          <motion.div {...fadeUp} className="text-center mb-14">
+          <motion.div {...fadeUp} className="text-center mb-12">
             <SectionLabelLight label="In-House Manufacturing" />
             <h2 className="font-display text-3xl md:text-4xl font-extrabold text-primary-foreground mb-4">
               VMC MACHINE CAPABILITIES
@@ -404,60 +498,68 @@ const MouldDesign = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* FEELER 40(A) */}
-            <motion.div {...fadeUpFast(0)} className="bg-accent/60 border border-primary-foreground/10 rounded-xl overflow-hidden">
-              <div className="px-6 py-4 border-b border-primary-foreground/10 flex items-center gap-3">
-                <Wrench className="w-5 h-5 text-accent-orange-2" />
-                <h3 className="font-display font-bold text-primary-foreground text-lg">FEELER 40 (A)</h3>
-                <span className="ml-auto font-mono text-[10px] tracking-[0.15em] uppercase text-primary">VMC Machine</span>
+            <motion.div {...fadeUpFast(0)}>
+              <div className="rounded-xl border border-primary-foreground/15 overflow-hidden mb-4 bg-[#0d1117] flex items-center justify-center p-6">
+                <img src={feelerImg} alt="FEELER 40(A) VMC Machine" className="max-h-56 w-auto object-contain" />
               </div>
-              <div className="p-2">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="text-left">
-                      <th className="px-4 py-2 font-mono text-[10px] tracking-wider uppercase text-primary w-8">No.</th>
-                      <th className="px-4 py-2 font-mono text-[10px] tracking-wider uppercase text-primary">Specification</th>
-                      <th className="px-4 py-2 font-mono text-[10px] tracking-wider uppercase text-primary text-right">Value</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {feelerSpecs.map((row, i) => (
-                      <tr key={row.no} className={`border-t border-primary-foreground/5 ${i % 2 === 0 ? "bg-accent/40" : ""}`}>
-                        <td className="px-4 py-2.5 font-mono text-[11px] text-primary">{row.no}</td>
-                        <td className="px-4 py-2.5 text-primary-foreground/80 text-[13px]">{row.desc}</td>
-                        <td className="px-4 py-2.5 font-display font-semibold text-primary-foreground text-[13px] text-right">{row.value}</td>
+              <div className="bg-accent/60 border border-primary-foreground/10 rounded-xl overflow-hidden">
+                <div className="px-6 py-4 border-b border-primary-foreground/10 flex items-center gap-3">
+                  <h3 className="font-display font-bold text-primary-foreground text-lg">FEELER 40 (A)</h3>
+                  <span className="ml-auto font-mono text-[10px] tracking-[0.15em] uppercase text-primary">VMC Machine</span>
+                </div>
+                <div className="p-2">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr>
+                        <th className="px-4 py-2 font-mono text-[10px] tracking-wider uppercase text-primary text-left w-8">No.</th>
+                        <th className="px-4 py-2 font-mono text-[10px] tracking-wider uppercase text-primary text-left">Spec</th>
+                        <th className="px-4 py-2 font-mono text-[10px] tracking-wider uppercase text-primary text-right">Value</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      {feelerSpecs.map((row, i) => (
+                        <tr key={row.no} className={`border-t border-primary-foreground/5 ${i % 2 === 0 ? "bg-accent/40" : ""}`}>
+                          <td className="px-4 py-2.5 font-mono text-[11px] text-primary">{row.no}</td>
+                          <td className="px-4 py-2.5 text-primary-foreground/80 text-[13px]">{row.desc}</td>
+                          <td className="px-4 py-2.5 font-display font-semibold text-primary-foreground text-[13px] text-right">{row.value}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </motion.div>
 
             {/* HAAS V3YT */}
-            <motion.div {...fadeUpFast(0.1)} className="bg-accent/60 border border-primary-foreground/10 rounded-xl overflow-hidden">
-              <div className="px-6 py-4 border-b border-primary-foreground/10 flex items-center gap-3">
-                <Wrench className="w-5 h-5 text-accent-orange-2" />
-                <h3 className="font-display font-bold text-primary-foreground text-lg">HAAS V3YT</h3>
-                <span className="ml-auto font-mono text-[10px] tracking-[0.15em] uppercase text-primary">VMC Machine</span>
+            <motion.div {...fadeUpFast(0.1)}>
+              <div className="rounded-xl border border-primary-foreground/15 overflow-hidden mb-4 bg-[#0d1117] flex items-center justify-center p-6">
+                <img src={haasImg} alt="HAAS V3YT VMC Machine" className="max-h-56 w-auto object-contain" />
               </div>
-              <div className="p-2">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="text-left">
-                      <th className="px-4 py-2 font-mono text-[10px] tracking-wider uppercase text-primary w-8">No.</th>
-                      <th className="px-4 py-2 font-mono text-[10px] tracking-wider uppercase text-primary">Specification</th>
-                      <th className="px-4 py-2 font-mono text-[10px] tracking-wider uppercase text-primary text-right">Value</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {haasSpecs.map((row, i) => (
-                      <tr key={row.no} className={`border-t border-primary-foreground/5 ${i % 2 === 0 ? "bg-accent/40" : ""}`}>
-                        <td className="px-4 py-2.5 font-mono text-[11px] text-primary">{row.no}</td>
-                        <td className="px-4 py-2.5 text-primary-foreground/80 text-[13px]">{row.desc}</td>
-                        <td className="px-4 py-2.5 font-display font-semibold text-primary-foreground text-[13px] text-right">{row.value}</td>
+              <div className="bg-accent/60 border border-primary-foreground/10 rounded-xl overflow-hidden">
+                <div className="px-6 py-4 border-b border-primary-foreground/10 flex items-center gap-3">
+                  <h3 className="font-display font-bold text-primary-foreground text-lg">HAAS V3YT</h3>
+                  <span className="ml-auto font-mono text-[10px] tracking-[0.15em] uppercase text-primary">VMC Machine</span>
+                </div>
+                <div className="p-2">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr>
+                        <th className="px-4 py-2 font-mono text-[10px] tracking-wider uppercase text-primary text-left w-8">No.</th>
+                        <th className="px-4 py-2 font-mono text-[10px] tracking-wider uppercase text-primary text-left">Spec</th>
+                        <th className="px-4 py-2 font-mono text-[10px] tracking-wider uppercase text-primary text-right">Value</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      {haasSpecs.map((row, i) => (
+                        <tr key={row.no} className={`border-t border-primary-foreground/5 ${i % 2 === 0 ? "bg-accent/40" : ""}`}>
+                          <td className="px-4 py-2.5 font-mono text-[11px] text-primary">{row.no}</td>
+                          <td className="px-4 py-2.5 text-primary-foreground/80 text-[13px]">{row.desc}</td>
+                          <td className="px-4 py-2.5 font-display font-semibold text-primary-foreground text-[13px] text-right">{row.value}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -467,7 +569,7 @@ const MouldDesign = () => {
       {/* ── Press Tool Design ── */}
       <section className="relative z-[1] py-20 px-8 md:px-16">
         <div className="max-w-6xl mx-auto">
-          <motion.div {...fadeUp} className="text-center mb-14">
+          <motion.div {...fadeUp} className="text-center mb-12">
             <SectionLabel label="Solutions in Action" />
             <h2 className="font-display text-3xl md:text-4xl font-extrabold text-foreground mb-4">
               PRESS TOOL DESIGN
@@ -478,27 +580,57 @@ const MouldDesign = () => {
             </p>
           </motion.div>
 
+          {/* Exploded tool assembly showcase */}
+          <motion.div {...fadeUp} className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-1 h-8 bg-primary rounded-full" />
+              <h3 className="font-display font-bold text-foreground text-lg">Complete Press Tool Assembly — Exploded View</h3>
+            </div>
+            <div className="rounded-xl border border-border overflow-hidden bg-card flex items-center justify-center p-6 md:p-10 shadow-[0_0_40px_hsl(var(--primary)/0.06)]">
+              <img
+                src={pressToolAssemblyImg}
+                alt="Exploded view of complete press tool assembly showing all layers"
+                className="max-h-[420px] w-auto object-contain"
+              />
+            </div>
+          </motion.div>
+
           {/* Transfer Die */}
           <motion.div {...fadeUp} className="mb-12">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-1 h-8 bg-primary rounded-full" />
+              <div className="w-1 h-8 bg-accent-orange-2 rounded-full" />
               <h3 className="font-display font-bold text-foreground text-xl">Transfer Die — Automotive Panels</h3>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {transferDieStages.map((stage, i) => (
-                <motion.div
-                  key={stage.label}
-                  {...fadeUpFast(i * 0.08)}
-                  className="bg-card border border-border rounded-lg p-5 hover:border-primary/30 transition-colors relative"
-                >
-                  <div className="font-mono text-[10px] tracking-[0.15em] uppercase text-accent-orange-2 mb-2">
-                    Stage {String(i + 1).padStart(2, "0")}
-                  </div>
-                  <h4 className="font-display font-bold text-foreground text-base mb-2">{stage.label}</h4>
-                  <p className="text-silver text-sm leading-relaxed">{stage.desc}</p>
-                  {i < transferDieStages.length - 1 && (
-                    <ArrowRight className="hidden lg:block absolute top-1/2 -right-5 -translate-y-1/2 w-4 h-4 text-silver/40" />
-                  )}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div className="rounded-xl border border-border overflow-hidden bg-card">
+                <div className="bg-card px-4 py-2.5 border-b border-border">
+                  <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-accent-orange-2">Transfer Die — Top Half</p>
+                </div>
+                <div className="flex items-center justify-center p-4 bg-muted/20">
+                  <img src={transferDie1Img} alt="Transfer die top half CAD model" className="w-full h-auto block rounded" />
+                </div>
+              </div>
+              <div className="rounded-xl border border-border overflow-hidden bg-card">
+                <div className="bg-card px-4 py-2.5 border-b border-border">
+                  <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-accent-orange-2">Transfer Die — Full Assembly</p>
+                </div>
+                <div className="flex items-center justify-center p-4 bg-muted/20">
+                  <img src={transferDie2Img} alt="Transfer die full assembly CAD model" className="w-full h-auto block rounded" />
+                </div>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+              {[
+                { no: "01", label: "Draw Die", desc: "Initial forming with controlled material flow." },
+                { no: "02", label: "Trim Die", desc: "Precision trimming to exact part boundaries." },
+                { no: "03", label: "Forming Die", desc: "Complex geometries with tight tolerances." },
+                { no: "04", label: "Restrike Die", desc: "Springback correction — dimensional lock-in." },
+              ].map((stage, i) => (
+                <motion.div key={stage.label} {...fadeUpFast(i * 0.08)} className="bg-card border border-border rounded-lg p-5 hover:border-primary/30 transition-colors relative">
+                  <div className="font-mono text-[10px] tracking-[0.15em] uppercase text-accent-orange-2 mb-2">Stage {stage.no}</div>
+                  <h4 className="font-display font-bold text-foreground text-base mb-1">{stage.label}</h4>
+                  <p className="text-silver text-sm">{stage.desc}</p>
+                  {i < 3 && <ArrowRight className="hidden md:block absolute top-1/2 -right-5 -translate-y-1/2 w-4 h-4 text-silver/30" />}
                 </motion.div>
               ))}
             </div>
@@ -507,19 +639,38 @@ const MouldDesign = () => {
           {/* Plate Type Dies */}
           <motion.div {...fadeUp}>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-1 h-8 bg-accent-orange-2 rounded-full" />
+              <div className="w-1 h-8 bg-primary rounded-full" />
               <h3 className="font-display font-bold text-foreground text-xl">Plate Type Dies — Designed & Manufactured</h3>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {plateTypeDies.map((die, i) => (
-                <motion.div
-                  key={die.label}
-                  {...fadeUpFast(i * 0.08)}
-                  className="bg-card border border-border rounded-lg p-5 hover:border-primary/30 transition-colors"
-                >
-                  <Hammer className="w-5 h-5 text-accent-orange-2 mb-3" />
-                  <h4 className="font-display font-bold text-foreground text-base mb-2">{die.label}</h4>
-                  <p className="text-silver text-sm leading-relaxed">{die.desc}</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div className="rounded-xl border border-border overflow-hidden bg-card">
+                <div className="bg-card px-4 py-2.5 border-b border-border">
+                  <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-accent-orange-2">Crash Form Die — Machined</p>
+                </div>
+                <div className="p-3 bg-muted/20">
+                  <img src={plateDie1Img} alt="Crash form die machined pair" className="w-full h-auto block rounded" />
+                </div>
+              </div>
+              <div className="rounded-xl border border-border overflow-hidden bg-card">
+                <div className="bg-card px-4 py-2.5 border-b border-border">
+                  <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-accent-orange-2">Pierce Die — Open View</p>
+                </div>
+                <div className="p-3 bg-muted/20">
+                  <img src={plateDie2Img} alt="Pierce die open view showing punch and die detail" className="w-full h-auto block rounded" />
+                </div>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+              {[
+                { icon: Hammer, label: "Pierce Die", desc: "High-precision hole piercing with engineered clearances." },
+                { icon: Hammer, label: "Crash Form Die", desc: "Rapid flanges and complex bends in a single stroke." },
+                { icon: Hammer, label: "Forming Die", desc: "Multi-stage forming for complex panel geometries." },
+                { icon: Hammer, label: "Piercing Die", desc: "Simultaneous multi-hole piercing for high-volume panels." },
+              ].map((die, i) => (
+                <motion.div key={die.label} {...fadeUpFast(i * 0.08)} className="bg-card border border-border rounded-lg p-5 hover:border-primary/30 transition-colors">
+                  <die.icon className="w-5 h-5 text-accent-orange-2 mb-3" />
+                  <h4 className="font-display font-bold text-foreground text-base mb-1">{die.label}</h4>
+                  <p className="text-silver text-sm">{die.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -527,10 +678,10 @@ const MouldDesign = () => {
         </div>
       </section>
 
-      {/* ── Trial Press Details ── */}
+      {/* ── Trial Press Facility ── */}
       <section className="relative z-[1] py-20 px-8 md:px-16 bg-accent text-primary-foreground">
         <div className="max-w-6xl mx-auto">
-          <motion.div {...fadeUp} className="text-center mb-14">
+          <motion.div {...fadeUp} className="text-center mb-12">
             <SectionLabelLight label="Trial Press Facility" />
             <h2 className="font-display text-3xl md:text-4xl font-extrabold text-primary-foreground mb-4">
               IN-HOUSE TRIAL PRESS DETAILS
@@ -541,6 +692,27 @@ const MouldDesign = () => {
             </p>
           </motion.div>
 
+          {/* Press photos */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            <motion.div {...fadeUpFast(0)} className="rounded-xl border border-primary-foreground/15 overflow-hidden">
+              <div className="bg-accent/40 px-4 py-2.5 border-b border-primary-foreground/10">
+                <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-primary">Trial Press Machine</p>
+              </div>
+              <div className="bg-[#0d1117] flex items-center justify-center p-6">
+                <img src={trialPressImg} alt="SNX-250 trial press machine" className="max-h-72 w-auto object-contain" />
+              </div>
+            </motion.div>
+            <motion.div {...fadeUpFast(0.1)} className="rounded-xl border border-primary-foreground/15 overflow-hidden">
+              <div className="bg-accent/40 px-4 py-2.5 border-b border-primary-foreground/10">
+                <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-primary">Press Trial — In Action</p>
+              </div>
+              <div className="bg-[#0d1117] flex items-center justify-center p-6">
+                <img src={trialPressActionImg} alt="Trial press in action with formed parts" className="max-h-72 w-auto object-contain" />
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Press specs */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {trialPresses.map((press, i) => (
               <motion.div
@@ -554,18 +726,18 @@ const MouldDesign = () => {
                 <div className="font-display font-extrabold text-3xl text-primary-foreground mb-1">{press.capacity}</div>
                 <div className="font-mono text-[11px] tracking-wider uppercase text-primary mb-4">{press.type}</div>
                 <div className="space-y-2 border-t border-primary-foreground/10 pt-4">
-                  <div className="flex justify-between items-center text-sm">
+                  <div className="flex justify-between text-sm">
                     <span className="text-primary-foreground/60">Bed Size</span>
                     <span className="font-semibold text-primary-foreground">{press.bedSize}</span>
                   </div>
-                  <div className="flex justify-between items-center text-sm">
+                  <div className="flex justify-between text-sm">
                     <span className="text-primary-foreground/60">Stroke</span>
                     <span className="font-semibold text-primary-foreground">{press.stroke}</span>
                   </div>
-                  {press.height !== "—" && (
-                    <div className="flex justify-between items-center text-sm">
+                  {press.dieHeight && (
+                    <div className="flex justify-between text-sm">
                       <span className="text-primary-foreground/60">Die Height</span>
-                      <span className="font-semibold text-primary-foreground">{press.height.replace(" die height", "")}</span>
+                      <span className="font-semibold text-primary-foreground">{press.dieHeight}</span>
                     </div>
                   )}
                 </div>
@@ -575,10 +747,10 @@ const MouldDesign = () => {
         </div>
       </section>
 
-      {/* ── Why Choose Us ── */}
+      {/* ── Why Batara ── */}
       <section className="relative z-[1] py-20 px-8 md:px-16">
         <div className="max-w-6xl mx-auto">
-          <motion.div {...fadeUp} className="text-center mb-14">
+          <motion.div {...fadeUp} className="text-center mb-12">
             <SectionLabel label="Why Batara" />
             <h2 className="font-display text-3xl md:text-4xl font-extrabold text-foreground mb-4">
               THE COMPLETE ADVANTAGE

@@ -866,24 +866,8 @@ const MouldDesign = () => {
         <div className="max-w-[1400px] mx-auto">
           <div className="flex flex-col lg:flex-row gap-8 items-start">
 
-            {/* ── LEFT: content panel ── */}
-            <div className="flex-1 min-w-0">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeTab}
-                  initial={{ opacity: 0, y: 18 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -12 }}
-                  transition={{ duration: 0.35, ease: "easeInOut" }}
-                  className="bg-background rounded-2xl border border-border p-6 md:p-10 shadow-[0_2px_40px_hsl(var(--primary)/0.05)]"
-                >
-                  {CONTENT[activeTab]}
-                </motion.div>
-              </AnimatePresence>
-            </div>
-
-            {/* ── RIGHT: tab nav (sticky) ── */}
-            <div className="w-full lg:w-72 shrink-0">
+            {/* ── LEFT: tab nav (sticky) ── */}
+            <div className="w-full lg:w-72 shrink-0 order-2 lg:order-1">
               <div className="sticky top-24">
                 {/* header strip */}
                 <div className="bg-accent rounded-t-2xl px-5 py-4 border-b border-primary-foreground/10">
@@ -901,8 +885,8 @@ const MouldDesign = () => {
                         className={`
                           w-full flex items-center gap-4 px-5 py-4 text-left transition-all duration-200 group
                           ${isActive
-                            ? "bg-primary/15 border-l-[3px] border-l-accent-orange-2"
-                            : "border-l-[3px] border-l-transparent hover:bg-primary-foreground/5 hover:border-l-primary/40"}
+                            ? "bg-primary/15 border-r-[3px] border-r-accent-orange-2"
+                            : "border-r-[3px] border-r-transparent hover:bg-primary-foreground/5 hover:border-r-primary/40"}
                         `}
                       >
                         {/* icon */}
@@ -921,7 +905,7 @@ const MouldDesign = () => {
                             {tab.sub}
                           </p>
                         </div>
-                        {/* active dot */}
+                        {/* active arrow */}
                         {isActive && (
                           <div className="ml-auto w-1.5 h-1.5 rounded-full bg-accent-orange-2 shrink-0" />
                         )}
@@ -934,6 +918,22 @@ const MouldDesign = () => {
                   Click a section to explore
                 </p>
               </div>
+            </div>
+
+            {/* ── RIGHT: content panel ── */}
+            <div className="flex-1 min-w-0 order-1 lg:order-2">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeTab}
+                  initial={{ opacity: 0, y: 18 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -12 }}
+                  transition={{ duration: 0.35, ease: "easeInOut" }}
+                  className="bg-background rounded-2xl border border-border p-6 md:p-10 shadow-[0_2px_40px_hsl(var(--primary)/0.05)]"
+                >
+                  {CONTENT[activeTab]}
+                </motion.div>
+              </AnimatePresence>
             </div>
 
           </div>

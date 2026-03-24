@@ -10,10 +10,12 @@ import {
   FlaskConical,
   Gauge,
   Hammer,
-  LayoutGrid,
   Cpu,
   Settings,
   ChevronRight,
+  Zap,
+  RefreshCw,
+  Target,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -26,16 +28,22 @@ import dfmImg from "@/assets/ppt/image3.png";
 import grillMovingHalfImg from "@/assets/ppt/image4.png";
 import grillFixedHalfImg from "@/assets/ppt/image5.png";
 import grillTopViewImg from "@/assets/ppt/image8.png";
+import grillAssemblyImg from "@/assets/ppt/image6.png";
+import grillPartModelImg from "@/assets/ppt/image7.png";
 // Slide 4 — Mould Base & Assembly
 import mouldBaseImg from "@/assets/ppt/image9.png";
 import mouldAssemblyImg from "@/assets/ppt/image10.png";
 import mouldPhysicalImg from "@/assets/ppt/image11.jpg";
+import mouldPhysical2Img from "@/assets/ppt/image12.jpg";
 // Slide 5 — Motor Housing
 import motorHousingImg1 from "@/assets/ppt/image13.jpg";
 import motorHousingImg2 from "@/assets/ppt/image14.jpg";
 // Slide 6 — Moldflow
+import moldflowServicesImg from "@/assets/ppt/image17.png";
 import moldflowResultsImg from "@/assets/ppt/image15.png";
 import moldflowCoolingImg from "@/assets/ppt/image16.png";
+import moldflowGasAssistImg from "@/assets/ppt/image18.png";
+import moldflow2KImg from "@/assets/ppt/image19.png";
 // Slide 7 — VMC Machines
 import haasImg from "@/assets/ppt/image20.jpg";
 import feelerImg from "@/assets/ppt/image21.jpg";
@@ -44,12 +52,27 @@ import pressToolAssemblyImg from "@/assets/ppt/image40.png";
 // Slide 9 — Transfer Die
 import transferDie1Img from "@/assets/ppt/image41.jpg";
 import transferDie2Img from "@/assets/ppt/image47.jpg";
+import transferDie3Img from "@/assets/ppt/image42.jpg";
+import transferDie4Img from "@/assets/ppt/image43.jpg";
+import transferDie5Img from "@/assets/ppt/image44.jpg";
+import transferDie6Img from "@/assets/ppt/image45.jpg";
+import transferDie7Img from "@/assets/ppt/image46.jpg";
 // Slide 10 — Plate Type Dies
 import plateDie1Img from "@/assets/ppt/image53.jpg";
 import plateDie2Img from "@/assets/ppt/image55.jpg";
+import plateDie3Img from "@/assets/ppt/image48.jpg";
+import plateDie4Img from "@/assets/ppt/image49.jpg";
+import plateDie5Img from "@/assets/ppt/image50.png";
+import plateDie6Img from "@/assets/ppt/image51.jpg";
+import plateDie7Img from "@/assets/ppt/image52.jpg";
+import plateDiePhysical1Img from "@/assets/ppt/image54.jpg";
+import plateDiePhysical2Img from "@/assets/ppt/image56.jpg";
+import plateDiePhysical3Img from "@/assets/ppt/image57.jpg";
+import plateDiePhysical4Img from "@/assets/ppt/image58.jpg";
 // Slide 11 — Trial Press
 import trialPressImg from "@/assets/ppt/image60.jpg";
 import trialPressActionImg from "@/assets/ppt/image61.jpg";
+import trialPress3Img from "@/assets/ppt/image62.jpg";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -122,6 +145,31 @@ const closingPoints = [
   { icon: Cpu, title: "In-House Technical Expertise", desc: "Fully equipped VMC machining centres and in-house trial press bays eliminate external dependency." },
   { icon: Gauge, title: "Best Cost Option", desc: "Competitive pricing without compromise — engineering efficiency drives our cost structure." },
   { icon: Shield, title: "Reliable Quality & Delivery", desc: "ISO-certified processes with strict milestone tracking and on-time delivery commitment." },
+];
+
+const moldflowServices = [
+  "Best Gate Location Analysis",
+  "Molding Window Analysis",
+  "Flow Analysis",
+  "Cool Analysis",
+  "Shrinkage Analysis",
+  "Warpage Analysis",
+  "Core Deflection Analysis",
+  "Over Molding Analysis",
+  "Thin Wall Molding",
+];
+
+const moldflowAdvanced = [
+  "Gas Assisted Injection Molding",
+  "Injection Compression Molding",
+  "Microcellular Injection Molding (MuCell)",
+  "Compression Molding",
+];
+
+const moldflowStages = [
+  "Part Design Phase",
+  "Tool Design Phase",
+  "Production Phase",
 ];
 
 const SectionLabel = ({ label }: { label: string }) => (
@@ -304,6 +352,26 @@ const MouldDesign = () => {
             ))}
           </motion.div>
 
+          {/* Part model + assembly */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <motion.div {...fadeUpFast(0)} className="rounded-xl border border-primary-foreground/15 overflow-hidden bg-[#1a1f2e]">
+              <div className="bg-accent/40 px-4 py-2.5 border-b border-primary-foreground/10">
+                <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-primary">Grill Mesh — Part Model (3D CAD)</p>
+              </div>
+              <div className="flex items-center justify-center p-4 bg-[#1a1f2e] min-h-[200px]">
+                <img src={grillPartModelImg} alt="Grill Mesh 3D part model CAD" className="w-full h-auto block" />
+              </div>
+            </motion.div>
+            <motion.div {...fadeUpFast(0.1)} className="rounded-xl border border-primary-foreground/15 overflow-hidden bg-[#1a1f2e]">
+              <div className="bg-accent/40 px-4 py-2.5 border-b border-primary-foreground/10">
+                <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-primary">Mould Assembly — Isometric View</p>
+              </div>
+              <div className="flex items-center justify-center p-4 bg-[#1a1f2e] min-h-[200px]">
+                <img src={grillAssemblyImg} alt="Grill Mesh complete mould assembly isometric view" className="w-full h-auto block" />
+              </div>
+            </motion.div>
+          </div>
+
           {/* 3-image gallery */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <motion.div {...fadeUpFast(0)} className="rounded-xl border border-primary-foreground/15 overflow-hidden bg-[#1a1f2e]">
@@ -350,11 +418,12 @@ const MouldDesign = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { img: mouldBaseImg, label: "Mould Base", caption: "Precision machined mould base — fixed half" },
               { img: mouldAssemblyImg, label: "Mould Assembly", caption: "Complete mould assembly with slide rail mechanism" },
               { img: mouldPhysicalImg, label: "Physical Mould", caption: "Assembled mould ready for trial press run" },
+              { img: mouldPhysical2Img, label: "Machined Halves", caption: "Both mould halves after precision machining — side by side inspection" },
             ].map((item, i) => (
               <motion.div
                 key={item.label}
@@ -444,6 +513,68 @@ const MouldDesign = () => {
             </p>
           </motion.div>
 
+          {/* Moldflow Services Overview */}
+          <motion.div {...fadeUp} className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-1 h-8 bg-primary rounded-full" />
+              <h3 className="font-display font-bold text-foreground text-lg">Moldflow Services — Complete Capability Overview</h3>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              {/* Services list */}
+              <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-colors">
+                <div className="flex items-center gap-2 mb-4">
+                  <Target className="w-4 h-4 text-accent-orange-2" />
+                  <h4 className="font-display font-bold text-foreground text-base">Moldflow Services</h4>
+                </div>
+                <ul className="space-y-2">
+                  {moldflowServices.map((s) => (
+                    <li key={s} className="flex items-start gap-2 text-sm text-silver">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-accent-orange-2 shrink-0 mt-0.5" />
+                      {s}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              {/* Advanced simulations */}
+              <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-colors">
+                <div className="flex items-center gap-2 mb-4">
+                  <Zap className="w-4 h-4 text-accent-orange-2" />
+                  <h4 className="font-display font-bold text-foreground text-base">Advanced Simulations</h4>
+                </div>
+                <ul className="space-y-2">
+                  {moldflowAdvanced.map((s) => (
+                    <li key={s} className="flex items-start gap-2 text-sm text-silver">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-accent-orange-2 shrink-0 mt-0.5" />
+                      {s}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <RefreshCw className="w-4 h-4 text-accent-orange-2" />
+                    <h4 className="font-display font-bold text-foreground text-base">Service Stages</h4>
+                  </div>
+                  <ul className="space-y-2">
+                    {moldflowStages.map((s) => (
+                      <li key={s} className="flex items-start gap-2 text-sm text-silver">
+                        <ChevronRight className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
+                        {s}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              {/* Services image */}
+              <div className="rounded-xl border border-border overflow-hidden bg-white shadow-[0_0_20px_hsl(var(--primary)/0.06)]">
+                <img
+                  src={moldflowServicesImg}
+                  alt="Moldflow services list including gate location, molding window, flow, cool, shrinkage, warpage, core deflection analysis"
+                  className="w-full h-auto block"
+                />
+              </div>
+            </div>
+          </motion.div>
+
           {/* Multi-part results */}
           <motion.div {...fadeUp} className="mb-8">
             <div className="flex items-center gap-3 mb-5">
@@ -463,7 +594,7 @@ const MouldDesign = () => {
           </motion.div>
 
           {/* Cooling / Cycle Time */}
-          <motion.div {...fadeUp}>
+          <motion.div {...fadeUp} className="mb-8">
             <div className="flex items-center gap-3 mb-5">
               <div className="w-1 h-8 bg-primary rounded-full" />
               <h3 className="font-display font-bold text-foreground text-lg">Tool Validation — Cooling Circuit & Cycle Time Prediction</h3>
@@ -477,6 +608,42 @@ const MouldDesign = () => {
             </div>
             <p className="mt-3 text-center font-mono text-[11px] tracking-[0.15em] uppercase text-silver/60">
               Cavity Cooling · Core Cooling · Cycle Time: Injection 8s + Packing 15s + Cooling 22s + Ejection 15s = 60s Total
+            </p>
+          </motion.div>
+
+          {/* Gas Assisted Injection Molding */}
+          <motion.div {...fadeUp} className="mb-8">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-1 h-8 bg-accent-orange-2 rounded-full" />
+              <h3 className="font-display font-bold text-foreground text-lg">Advanced Simulation — Gas Assisted Injection Molding Analysis</h3>
+            </div>
+            <div className="rounded-xl border border-border overflow-hidden shadow-[0_0_40px_hsl(var(--primary)/0.06)] bg-white">
+              <img
+                src={moldflowGasAssistImg}
+                alt="Gas Assisted Injection Molding Analysis showing fill animation, gas volume XY plot, gas time and gas core penetration"
+                className="w-full h-auto block"
+              />
+            </div>
+            <p className="mt-3 text-center font-mono text-[11px] tracking-[0.15em] uppercase text-silver/60">
+              Fill Animation · Gas Volume XY Plot · Gas Time · Gas Core Penetration — Gas Volume 33.06%
+            </p>
+          </motion.div>
+
+          {/* 2K Molding */}
+          <motion.div {...fadeUp}>
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-1 h-8 bg-primary rounded-full" />
+              <h3 className="font-display font-bold text-foreground text-lg">Advanced Simulation — 2K Molding Analysis</h3>
+            </div>
+            <div className="rounded-xl border border-border overflow-hidden shadow-[0_0_40px_hsl(var(--primary)/0.06)] bg-white">
+              <img
+                src={moldflow2KImg}
+                alt="2K Molding analysis showing 1st shot and 2nd shot part simulation"
+                className="w-full h-auto block"
+              />
+            </div>
+            <p className="mt-3 text-center font-mono text-[11px] tracking-[0.15em] uppercase text-silver/60">
+              2K Molding — 1st Shot & 2nd Shot Part Simulation
             </p>
           </motion.div>
         </div>
@@ -601,7 +768,9 @@ const MouldDesign = () => {
               <div className="w-1 h-8 bg-accent-orange-2 rounded-full" />
               <h3 className="font-display font-bold text-foreground text-xl">Transfer Die — Automotive Panels</h3>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+
+            {/* First two transfer die images */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
               <div className="rounded-xl border border-border overflow-hidden bg-card">
                 <div className="bg-card px-4 py-2.5 border-b border-border">
                   <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-accent-orange-2">Transfer Die — Top Half</p>
@@ -619,6 +788,54 @@ const MouldDesign = () => {
                 </div>
               </div>
             </div>
+
+            {/* Additional transfer die CAD models */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+              <div className="rounded-xl border border-border overflow-hidden bg-card">
+                <div className="bg-card px-4 py-2.5 border-b border-border">
+                  <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-accent-orange-2">Transfer Die — Isometric</p>
+                </div>
+                <div className="flex items-center justify-center p-3 bg-muted/20 min-h-[160px]">
+                  <img src={transferDie3Img} alt="Transfer die isometric CAD view" className="w-full h-auto block rounded" />
+                </div>
+              </div>
+              <div className="rounded-xl border border-border overflow-hidden bg-card">
+                <div className="bg-card px-4 py-2.5 border-b border-border">
+                  <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-accent-orange-2">Transfer Die — Open Top View</p>
+                </div>
+                <div className="flex items-center justify-center p-3 bg-muted/20 min-h-[160px]">
+                  <img src={transferDie4Img} alt="Transfer die open top view CAD" className="w-full h-auto block rounded" />
+                </div>
+              </div>
+              <div className="rounded-xl border border-border overflow-hidden bg-card">
+                <div className="bg-card px-4 py-2.5 border-b border-border">
+                  <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-accent-orange-2">Forming Die Assembly</p>
+                </div>
+                <div className="flex items-center justify-center p-3 bg-muted/20 min-h-[160px]">
+                  <img src={transferDie5Img} alt="Forming die assembly CAD" className="w-full h-auto block rounded" />
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              <div className="rounded-xl border border-border overflow-hidden bg-card">
+                <div className="bg-card px-4 py-2.5 border-b border-border">
+                  <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-accent-orange-2">Bending Die — Labelled Assembly</p>
+                </div>
+                <div className="flex items-center justify-center p-3 bg-muted/20">
+                  <img src={transferDie6Img} alt="Bending die labelled assembly with weight spec UPR WT-0.6T TOT WT-2T" className="w-full h-auto block rounded" />
+                </div>
+              </div>
+              <div className="rounded-xl border border-border overflow-hidden bg-card">
+                <div className="bg-card px-4 py-2.5 border-b border-border">
+                  <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-accent-orange-2">Progressive Transfer Die</p>
+                </div>
+                <div className="flex items-center justify-center p-3 bg-muted/20">
+                  <img src={transferDie7Img} alt="Progressive transfer die CAD model horizontal layout" className="w-full h-auto block rounded" />
+                </div>
+              </div>
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               {[
                 { no: "01", label: "Draw Die", desc: "Initial forming with controlled material flow." },
@@ -642,7 +859,9 @@ const MouldDesign = () => {
               <div className="w-1 h-8 bg-primary rounded-full" />
               <h3 className="font-display font-bold text-foreground text-xl">Plate Type Dies — Designed & Manufactured</h3>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+
+            {/* Original two plate die images */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
               <div className="rounded-xl border border-border overflow-hidden bg-card">
                 <div className="bg-card px-4 py-2.5 border-b border-border">
                   <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-accent-orange-2">Crash Form Die — Machined</p>
@@ -660,6 +879,79 @@ const MouldDesign = () => {
                 </div>
               </div>
             </div>
+
+            {/* Additional plate die CAD models */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+              {[
+                { img: plateDie3Img, label: "Plate Die — Fixed Half", alt: "Plate die fixed half CAD" },
+                { img: plateDie4Img, label: "Die with Feed System", alt: "Die assembly with stock feeding mechanism" },
+                { img: plateDie5Img, label: "4-Station Plate Die", alt: "4-station plate die with teal and purple components" },
+                { img: plateDie6Img, label: "Die Assembly — Open", alt: "Die assembly open view grey CAD" },
+              ].map((item, i) => (
+                <motion.div key={item.label} {...fadeUpFast(i * 0.08)} className="rounded-xl border border-border overflow-hidden bg-card">
+                  <div className="bg-card px-3 py-2 border-b border-border">
+                    <p className="font-mono text-[10px] tracking-[0.12em] uppercase text-accent-orange-2">{item.label}</p>
+                  </div>
+                  <div className="p-2 bg-muted/20 flex items-center justify-center min-h-[130px]">
+                    <img src={item.img} alt={item.alt} className="w-full h-auto block rounded" />
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+              <div className="rounded-xl border border-border overflow-hidden bg-card">
+                <div className="bg-card px-4 py-2.5 border-b border-border">
+                  <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-accent-orange-2">Die Assembly — Colorful Internal Components</p>
+                </div>
+                <div className="p-3 bg-muted/20">
+                  <img src={plateDie7Img} alt="Die assembly with colorful internal components CAD" className="w-full h-auto block rounded" />
+                </div>
+              </div>
+              <div className="rounded-xl border border-border overflow-hidden bg-card">
+                <div className="bg-card px-4 py-2.5 border-b border-border">
+                  <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-accent-orange-2">Physical Plate Die Halves — Machined</p>
+                </div>
+                <div className="p-3 bg-muted/20">
+                  <img src={plateDiePhysical1Img} alt="Physical machined plate die halves on bench" className="w-full h-auto block rounded" />
+                </div>
+              </div>
+            </div>
+
+            {/* Physical die photos from shop floor */}
+            <div className="mb-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-1 h-6 bg-accent-orange-2 rounded-full" />
+                <h4 className="font-display font-bold text-foreground text-base">Shop Floor — Manufactured Dies</h4>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="rounded-xl border border-border overflow-hidden bg-card">
+                  <div className="bg-card px-4 py-2.5 border-b border-border">
+                    <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-accent-orange-2">Press Tool — Assembled Pair</p>
+                  </div>
+                  <div className="p-3 bg-muted/20">
+                    <img src={plateDiePhysical2Img} alt="Physical press tool assembled pair on shop floor" className="w-full h-auto block rounded" />
+                  </div>
+                </div>
+                <div className="rounded-xl border border-border overflow-hidden bg-card">
+                  <div className="bg-card px-4 py-2.5 border-b border-border">
+                    <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-accent-orange-2">Die — Top View with Punch Holders</p>
+                  </div>
+                  <div className="p-3 bg-muted/20">
+                    <img src={plateDiePhysical3Img} alt="Physical die top view with punch holders" className="w-full h-auto block rounded" />
+                  </div>
+                </div>
+                <div className="rounded-xl border border-border overflow-hidden bg-card">
+                  <div className="bg-card px-4 py-2.5 border-b border-border">
+                    <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-accent-orange-2">Die — Assembled with Cam Units</p>
+                  </div>
+                  <div className="p-3 bg-muted/20">
+                    <img src={plateDiePhysical4Img} alt="Physical die assembled with cam units" className="w-full h-auto block rounded" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               {[
                 { icon: Hammer, label: "Pierce Die", desc: "High-precision hole piercing with engineered clearances." },
@@ -693,12 +985,12 @@ const MouldDesign = () => {
           </motion.div>
 
           {/* Press photos */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
             <motion.div {...fadeUpFast(0)} className="rounded-xl border border-primary-foreground/15 overflow-hidden">
               <div className="bg-accent/40 px-4 py-2.5 border-b border-primary-foreground/10">
                 <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-primary">Trial Press Machine</p>
               </div>
-              <div className="bg-[#0d1117] flex items-center justify-center p-6">
+              <div className="bg-[#0d1117] flex items-center justify-center p-6 min-h-[280px]">
                 <img src={trialPressImg} alt="SNX-250 trial press machine" className="max-h-72 w-auto object-contain" />
               </div>
             </motion.div>
@@ -706,8 +998,16 @@ const MouldDesign = () => {
               <div className="bg-accent/40 px-4 py-2.5 border-b border-primary-foreground/10">
                 <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-primary">Press Trial — In Action</p>
               </div>
-              <div className="bg-[#0d1117] flex items-center justify-center p-6">
+              <div className="bg-[#0d1117] flex items-center justify-center p-6 min-h-[280px]">
                 <img src={trialPressActionImg} alt="Trial press in action with formed parts" className="max-h-72 w-auto object-contain" />
+              </div>
+            </motion.div>
+            <motion.div {...fadeUpFast(0.2)} className="rounded-xl border border-primary-foreground/15 overflow-hidden">
+              <div className="bg-accent/40 px-4 py-2.5 border-b border-primary-foreground/10">
+                <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-primary">80 Ton Hydraulic Press</p>
+              </div>
+              <div className="bg-[#0d1117] flex items-center justify-center p-6 min-h-[280px]">
+                <img src={trialPress3Img} alt="80 Ton hydraulic press in facility" className="max-h-72 w-auto object-contain" />
               </div>
             </motion.div>
           </div>

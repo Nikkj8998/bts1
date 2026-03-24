@@ -14,10 +14,10 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="flex items-center gap-3 mb-7"
+          className="flex items-start gap-2 mb-6"
         >
-          <div className="w-8 h-0.5 bg-primary" />
-          <span className="font-mono text-[11px] font-medium tracking-[0.2em] uppercase text-accent-orange-2">
+          <div className="w-6 h-0.5 bg-primary mt-[7px] shrink-0" />
+          <span className="font-mono text-[10px] sm:text-[11px] font-medium tracking-[0.1em] sm:tracking-[0.15em] uppercase text-accent-orange-2 leading-relaxed">
             Engineering Excellence for Tier-1, Tier-2 &amp; OEMs
           </span>
         </motion.div>
@@ -27,7 +27,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35 }}
-          className="font-display font-bold text-[clamp(40px,4.5vw,62px)] leading-[1.05] tracking-tight text-foreground mb-6"
+          className="font-display font-bold text-[28px] sm:text-[38px] md:text-[48px] lg:text-[clamp(40px,4.5vw,62px)] leading-[1.05] tracking-tight text-foreground mb-6"
         >
           YOU DEFINE THE FRICTION;
           <br />
@@ -48,7 +48,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.5 }}
-          className="text-[15px] font-light leading-[1.7] text-silver max-w-[480px] mb-11 border-l-2 border-border pl-5"
+          className="text-[14px] sm:text-[15px] font-light leading-[1.7] text-silver max-w-[480px] mb-8 border-l-2 border-border pl-4 sm:pl-5"
         >
           From raw problem to realized product: We{" "}
           <strong className="text-light font-medium">design the solution</strong>, deliver the result, and anchor the
@@ -60,7 +60,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.65 }}
-          className="flex gap-4 items-center flex-wrap"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-start sm:items-center"
         >
           <a
             href="#contact"

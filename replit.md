@@ -13,7 +13,7 @@ A frontend website for Batara Techno Solutions, an engineering firm specializing
 
 ## Project Structure
 
-- `src/pages/` — Page components (Index, Services, AboutUs, ContactSection, NotFound)
+- `src/pages/` — Page components (Index, Services, AboutUs, MouldDesign, ContactSection, NotFound)
 - `src/components/` — Shared components (Navbar, Footer, HeroSection, ServicesSection, etc.)
 - `src/assets/` — Static assets (images, logos)
 

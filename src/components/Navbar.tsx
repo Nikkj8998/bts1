@@ -6,6 +6,7 @@ import logoImg from "@/assets/logo-batara.png";
 const navLinks = [
   { label: "Home", href: "/", isRoute: true },
   { label: "Services & Technology", href: "/services", isRoute: true },
+  { label: "Mould Design", href: "/mould-design", isRoute: true },
   { label: "About Us", href: "/about", isRoute: true },
   { label: "Testimonials", href: "#testimonials" },
 ];

@@ -22,7 +22,8 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import infogramImg from "@/assets/batara-infogram.jpeg";
-import clip1Video from "@/assets/Clip1.mp4";
+
+const clip1Video = "";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -189,19 +190,21 @@ const Services = () => {
           </motion.div>
 
           {/* Animation Video */}
-          <motion.div {...fadeUp} className="mb-16">
-            <div className="relative max-w-4xl mx-auto rounded-xl overflow-hidden border border-primary-foreground/20 shadow-[0_0_60px_hsl(var(--primary)/0.15)]">
-              <video
-                src={clip1Video}
-                autoPlay
-                loop
-                muted
-                playsInline
-                controls
-                className="w-full h-auto block"
-              />
-            </div>
-          </motion.div>
+          {clip1Video && (
+            <motion.div {...fadeUp} className="mb-16">
+              <div className="relative max-w-4xl mx-auto rounded-xl overflow-hidden border border-primary-foreground/20 shadow-[0_0_60px_hsl(var(--primary)/0.15)]">
+                <video
+                  src={clip1Video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  controls
+                  className="w-full h-auto block"
+                />
+              </div>
+            </motion.div>
+          )}
 
           {/* Proof Points */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

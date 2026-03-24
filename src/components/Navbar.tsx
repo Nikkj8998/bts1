@@ -6,9 +6,9 @@ import logoImg from "@/assets/logo-batara.png";
 const navLinks = [
   { label: "Home", href: "/", isRoute: true },
   { label: "Services & Technology", href: "/services", isRoute: true },
-  { label: "Mould Design", href: "/mould-design", isRoute: true },
+  { label: "Project Portfolio", href: "/mould-design", isRoute: true },
   { label: "About Us", href: "/about", isRoute: true },
-  { label: "Testimonials", href: "#testimonials" },
+  { label: "Technical Gallery", href: "#testimonials" },
 ];
 
 const desktopLinkClass = "text-[13px] font-medium tracking-wider uppercase transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-px after:bg-primary after:origin-left after:transition-transform after:duration-300";

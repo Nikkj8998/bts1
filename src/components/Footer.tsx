@@ -5,7 +5,7 @@ const footerLinks = [
   { label: "Home", href: "#home" },
   { label: "About Us", href: "/about", isRoute: true },
   { label: "Services", href: "/services", isRoute: true },
-  { label: "Testimonials", href: "#testimonials" },
+  { label: "Technical Gallery", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
 ];
 

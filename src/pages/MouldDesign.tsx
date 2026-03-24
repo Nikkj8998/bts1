@@ -835,7 +835,7 @@ const MouldDesign = () => {
       <Navbar />
 
       {/* ── Hero ── */}
-      <section className="relative z-[1] pt-32 pb-20 px-8 md:px-16">
+      <section className="relative z-[1] pt-28 md:pt-32 pb-16 md:pb-20 px-4 sm:px-8 md:px-16">
         <div className="max-w-5xl mx-auto text-center">
           <motion.div {...fadeUp}>
             <div className="flex items-center justify-center gap-3 mb-4">
@@ -941,7 +941,7 @@ const MouldDesign = () => {
       </section>
 
       {/* ── Why Batara ── */}
-      <section className="relative z-[1] py-20 px-8 md:px-16 bg-accent text-primary-foreground">
+      <section className="relative z-[1] py-14 md:py-20 px-4 sm:px-8 md:px-16 bg-accent text-primary-foreground">
         <div className="max-w-6xl mx-auto">
           <motion.div {...fadeUp} className="text-center mb-12">
             <LabelLight text="Why Batara" />
@@ -972,7 +972,7 @@ const MouldDesign = () => {
       </section>
 
       {/* ── CTA ── */}
-      <section className="relative z-[1] py-20 px-8 md:px-16">
+      <section className="relative z-[1] py-14 md:py-20 px-4 sm:px-8 md:px-16">
         <motion.div {...fadeUp} className="max-w-3xl mx-auto text-center">
           <h2 className="font-display text-2xl md:text-3xl font-extrabold text-foreground mb-4">
             Ready for a Detailed Presentation & Demo?

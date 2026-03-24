@@ -123,7 +123,7 @@ const Services = () => {
       <Navbar />
 
       {/* Hero Banner */}
-      <section className="relative z-[1] pt-32 pb-20 px-8 md:px-16">
+      <section className="relative z-[1] pt-28 md:pt-32 pb-16 md:pb-20 px-4 sm:px-8 md:px-16">
         <div className="max-w-5xl mx-auto text-center">
           <motion.div {...fadeUp}>
             <div className="flex items-center justify-center gap-3 mb-6">
@@ -169,7 +169,7 @@ const Services = () => {
       </section>
 
       {/* Technical Animation & Simulation */}
-      <section className="relative z-[1] py-24 px-8 md:px-16 bg-accent text-primary-foreground">
+      <section className="relative z-[1] py-16 md:py-24 px-4 sm:px-8 md:px-16 bg-accent text-primary-foreground">
         <div className="max-w-6xl mx-auto">
           <motion.div {...fadeUp} className="text-center mb-12">
             <div className="flex items-center justify-center gap-3 mb-4">
@@ -227,7 +227,7 @@ const Services = () => {
       </section>
 
       {/* E-2-E Ecosystem Detailed */}
-      <section className="relative z-[1] py-24 px-8 md:px-16">
+      <section className="relative z-[1] py-16 md:py-24 px-4 sm:px-8 md:px-16">
         <div className="max-w-6xl mx-auto">
           <motion.div {...fadeUp} className="text-center mb-16">
             <div className="flex items-center justify-center gap-3 mb-4">
@@ -245,7 +245,7 @@ const Services = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {ecosystemSteps.map((step, i) => (
               <motion.div
                 key={step.label}
@@ -275,7 +275,7 @@ const Services = () => {
       </section>
 
       {/* Core Engineering Capabilities */}
-      <section className="relative z-[1] py-24 px-8 md:px-16 bg-accent text-primary-foreground">
+      <section className="relative z-[1] py-16 md:py-24 px-4 sm:px-8 md:px-16 bg-accent text-primary-foreground">
         <div className="max-w-6xl mx-auto">
           <motion.div {...fadeUp} className="text-center mb-16">
             <div className="flex items-center justify-center gap-3 mb-4">
@@ -319,7 +319,7 @@ const Services = () => {
       </section>
 
       {/* Delivery Standard */}
-      <section className="relative z-[1] py-24 px-8 md:px-16">
+      <section className="relative z-[1] py-16 md:py-24 px-4 sm:px-8 md:px-16">
         <div className="max-w-6xl mx-auto">
           <motion.div {...fadeUp} className="text-center mb-16">
             <div className="flex items-center justify-center gap-3 mb-4">
@@ -359,7 +359,7 @@ const Services = () => {
       </section>
 
       {/* Achievements Placeholder */}
-      <section className="relative z-[1] py-24 px-8 md:px-16 bg-accent text-primary-foreground">
+      <section className="relative z-[1] py-16 md:py-24 px-4 sm:px-8 md:px-16 bg-accent text-primary-foreground">
         <div className="max-w-6xl mx-auto">
           <motion.div {...fadeUp} className="text-center mb-12">
             <div className="flex items-center justify-center gap-3 mb-4">
@@ -390,7 +390,7 @@ const Services = () => {
       </section>
 
       {/* Dual CTA */}
-      <section className="relative z-[1] py-20 px-8 md:px-16">
+      <section className="relative z-[1] py-14 md:py-20 px-4 sm:px-8 md:px-16">
         <motion.div {...fadeUp} className="max-w-3xl mx-auto text-center">
           <h2 className="font-display text-2xl md:text-3xl font-extrabold text-foreground mb-4">
             Ready to See Your Problem Statement Perfectly Engineered?

@@ -24,7 +24,7 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section id="testimonials" className="relative z-[1] py-24 px-8 md:px-16">
+    <section id="testimonials" className="relative z-[1] py-16 md:py-24 px-4 sm:px-8 md:px-16">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

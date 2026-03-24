@@ -77,7 +77,7 @@ const TechnicalGallery = () => {
 
       <main className="pt-[68px]">
         {/* Hero */}
-        <section className="relative py-20 px-6 md:px-16 overflow-hidden">
+        <section className="relative py-14 md:py-20 px-4 sm:px-6 md:px-16 overflow-hidden">
           <div className="absolute inset-0 pointer-events-none opacity-30"
             style={{ background: "radial-gradient(ellipse 80% 50% at 50% -20%, hsl(var(--primary)/0.12), transparent)" }}
           />
@@ -112,8 +112,8 @@ const TechnicalGallery = () => {
         <div className="w-full h-px bg-border mx-auto" />
 
         {/* Video sections — alternating layout */}
-        <section className="py-16 px-6 md:px-16">
-          <div className="max-w-6xl mx-auto space-y-28">
+        <section className="py-12 md:py-16 px-4 sm:px-6 md:px-16">
+          <div className="max-w-6xl mx-auto space-y-16 md:space-y-28">
             {videos.map((video, i) => {
               const isEven = i % 2 === 0;
               return (
@@ -165,7 +165,7 @@ const TechnicalGallery = () => {
         </section>
 
         {/* Bottom CTA */}
-        <section className="py-20 px-6 md:px-16 border-t border-border">
+        <section className="py-14 md:py-20 px-4 sm:px-6 md:px-16 border-t border-border">
           <motion.div
             {...fadeUp}
             className="max-w-3xl mx-auto text-center"

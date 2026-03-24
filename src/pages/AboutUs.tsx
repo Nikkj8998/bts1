@@ -64,7 +64,7 @@ const AboutUs = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative z-[1] pt-32 pb-20 px-8 md:px-16 bg-background">
+      <section className="relative z-[1] pt-28 md:pt-32 pb-16 md:pb-20 px-4 sm:px-8 md:px-16 bg-background">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div {...fadeUp}>
             <div className="flex items-center justify-center gap-3 mb-4">
@@ -103,7 +103,7 @@ const AboutUs = () => {
       </section>
 
       {/* Industry Pedigree */}
-      <section className="relative z-[1] py-20 px-8 md:px-16 bg-accent text-primary-foreground">
+      <section className="relative z-[1] py-14 md:py-20 px-4 sm:px-8 md:px-16 bg-accent text-primary-foreground">
         <div className="max-w-5xl mx-auto">
           <motion.div {...fadeUp} className="text-center mb-12">
             <div className="flex items-center justify-center gap-3 mb-4">
@@ -137,7 +137,7 @@ const AboutUs = () => {
       </section>
 
       {/* The Batara Standard */}
-      <section className="relative z-[1] py-20 px-8 md:px-16 bg-background">
+      <section className="relative z-[1] py-14 md:py-20 px-4 sm:px-8 md:px-16 bg-background">
         <div className="max-w-5xl mx-auto">
           <motion.div {...fadeUp} className="text-center mb-12">
             <div className="flex items-center justify-center gap-3 mb-4">
@@ -172,7 +172,7 @@ const AboutUs = () => {
       </section>
 
       {/* Executive Leadership */}
-      <section className="relative z-[1] py-20 px-8 md:px-16 bg-accent text-primary-foreground">
+      <section className="relative z-[1] py-14 md:py-20 px-4 sm:px-8 md:px-16 bg-accent text-primary-foreground">
         <div className="max-w-5xl mx-auto">
           <motion.div {...fadeUp} className="text-center mb-12">
             <div className="flex items-center justify-center gap-3 mb-4">

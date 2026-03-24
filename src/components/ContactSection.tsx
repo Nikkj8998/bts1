@@ -6,7 +6,7 @@ const ContactSection = () => {
   const [clientType, setClientType] = useState<"b2b" | "d2c">("b2b");
 
   return (
-    <section id="contact" className="relative z-[1] py-24 px-8 md:px-16 bg-accent text-primary-foreground">
+    <section id="contact" className="relative z-[1] py-16 md:py-24 px-4 sm:px-8 md:px-16 bg-accent text-primary-foreground">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -33,7 +33,7 @@ const ContactSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-primary-foreground/10 border border-primary-foreground/10 rounded-xl p-8 md:p-10"
+          className="bg-primary-foreground/10 border border-primary-foreground/10 rounded-xl p-5 sm:p-8 md:p-10"
         >
           {/* Client type toggle */}
           <div className="flex gap-2 mb-8">

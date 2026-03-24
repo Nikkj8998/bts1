@@ -23,7 +23,7 @@ const steps = [
 
 const EcosystemSection = () => {
   return (
-    <section id="process" className="relative z-[1] py-24 px-8 md:px-16">
+    <section id="process" className="relative z-[1] py-16 md:py-24 px-4 sm:px-8 md:px-16">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -48,7 +48,7 @@ const EcosystemSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {steps.map((step, i) => (
             <motion.div
               key={step.label}

@@ -5,7 +5,7 @@ const HeroSection = () => {
   return (
     <section className="relative grid grid-cols-1 lg:grid-cols-2 min-h-screen pt-[68px] z-[1]">
       {/* Left Column: Copy */}
-      <div className="flex flex-col justify-center px-8 md:px-16 lg:px-20 py-16 lg:py-20 relative">
+      <div className="flex flex-col justify-center px-4 sm:px-8 md:px-16 lg:px-20 py-12 lg:py-20 relative">
         {/* Accent line divider on right (desktop) */}
         <div className="hidden lg:block absolute top-[68px] bottom-0 right-0 w-px bg-gradient-to-b from-transparent via-primary/50 to-transparent" />
 
@@ -206,7 +206,7 @@ const HeroSection = () => {
 
         {/* Floating badge */}
         <div
-          className="absolute bottom-9 right-9 z-10 flex items-center gap-3 px-4 py-3 bg-background/90 border border-cyan/30 rounded-md backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
+          className="absolute bottom-4 right-4 md:bottom-9 md:right-9 z-10 flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2 md:py-3 bg-background/90 border border-cyan/30 rounded-md backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
           style={{ animation: "badge-float 4s ease-in-out infinite" }}
         >
           <div
@@ -214,7 +214,7 @@ const HeroSection = () => {
             style={{ animation: "dot-pulse 2s ease-in-out infinite" }}
           />
 
-          <span className="font-mono text-[10px] font-medium tracking-[0.1em] text-cyan uppercase whitespace-nowrap">
+          <span className="font-mono text-[9px] md:text-[10px] font-medium tracking-[0.1em] text-cyan uppercase">
             Concept to Production in Action
           </span>
         </div>

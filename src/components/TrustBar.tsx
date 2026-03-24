@@ -30,13 +30,13 @@ const TrustBar = () => {
           label="On-Time Delivery"
         />
 
-        {/* Pipeline */}
-        <div className="flex-[1.6] min-w-[300px] flex items-center gap-4 px-8 py-5 bg-accent/5 border-l border-accent/10">
-          <div>
-            <div className="flex items-center gap-2 flex-wrap">
+        {/* Pipeline — hidden on mobile, visible from md */}
+        <div className="hidden md:flex flex-[1.6] min-w-0 items-center gap-4 px-6 lg:px-8 py-5 bg-accent/5 border-l border-accent/10">
+          <div className="min-w-0">
+            <div className="flex items-center gap-1.5 flex-wrap">
               {steps.map((step, i) => (
                 <span key={step} className="contents">
-                  <span className="font-mono text-[11px] font-medium tracking-[0.08em] text-accent bg-accent/10 border border-accent/20 px-2.5 py-1 rounded-sm whitespace-nowrap">
+                  <span className="font-mono text-[10px] lg:text-[11px] font-medium tracking-[0.08em] text-accent bg-accent/10 border border-accent/20 px-2 lg:px-2.5 py-1 rounded-sm whitespace-nowrap">
                     {step}
                   </span>
                   {i < steps.length - 1 && <span className="text-silver text-xs">→</span>}

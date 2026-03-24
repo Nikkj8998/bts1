@@ -35,7 +35,7 @@ const verticals = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="relative z-[1] py-24 px-8 md:px-16 bg-accent text-primary-foreground">
+    <section id="services" className="relative z-[1] py-16 md:py-24 px-4 sm:px-8 md:px-16 bg-accent text-primary-foreground">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -59,7 +59,7 @@ const ServicesSection = () => {
         </motion.div>
 
         {/* Verticals */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
           {verticals.map((v) => (
             <div
               key={v.name}

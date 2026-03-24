@@ -11,12 +11,12 @@ const footerLinks = [
 
 const Footer = () => {
   return (
-    <footer className="relative z-[1] bg-card border-t border-border py-12 px-8 md:px-16">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <footer className="relative z-[1] bg-card border-t border-border py-10 px-4 sm:px-8 md:px-16">
+      <div className="max-w-6xl mx-auto flex flex-col items-center gap-6 md:flex-row md:justify-between">
         <div className="flex items-center gap-3">
           <img src={logoImg} alt="Batara Techno Solutions" className="h-8 w-auto" />
         </div>
-        <div className="flex gap-8">
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-3">
           {footerLinks.map((link) =>
             link.isRoute ? (
               <Link key={link.label} to={link.href} className="text-silver text-xs uppercase tracking-wider hover:text-foreground transition-colors">
@@ -29,7 +29,7 @@ const Footer = () => {
             )
           )}
         </div>
-        <p className="font-mono text-[10px] text-silver tracking-wider">
+        <p className="font-mono text-[10px] text-silver tracking-wider text-center md:text-right">
           © 2025 Batara Techno Solutions. All rights reserved.
         </p>
       </div>

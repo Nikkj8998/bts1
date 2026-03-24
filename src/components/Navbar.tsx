@@ -8,7 +8,7 @@ const navLinks = [
   { label: "Services & Technology", href: "/services", isRoute: true },
   { label: "Project Portfolio", href: "/mould-design", isRoute: true },
   { label: "About Us", href: "/about", isRoute: true },
-  { label: "Technical Gallery", href: "#testimonials" },
+  { label: "Technical Gallery", href: "/technical-gallery", isRoute: true },
 ];
 
 const desktopLinkClass = "text-[13px] font-medium tracking-wider uppercase transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-px after:bg-primary after:origin-left after:transition-transform after:duration-300";

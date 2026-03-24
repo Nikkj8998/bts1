@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X, Shield } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logoImg from "@/assets/logo-batara.png";
 
 const navLinks = [
@@ -10,6 +10,8 @@ const navLinks = [
   { label: "About Us", href: "/about", isRoute: true },
   { label: "Testimonials", href: "#testimonials" },
 ];
+
+const desktopLinkClass = "text-[13px] font-medium tracking-wider uppercase transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-px after:bg-primary after:origin-left after:transition-transform after:duration-300";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -26,16 +28,23 @@ const Navbar = () => {
         {navLinks.map((link) => (
           <li key={link.label}>
             {link.isRoute ? (
-              <Link
+              <NavLink
                 to={link.href}
-                className="text-[13px] font-medium tracking-wider text-silver uppercase hover:text-foreground transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-px after:bg-primary after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
+                end={link.href === "/"}
+                className={({ isActive }) =>
+                  `${desktopLinkClass} ${
+                    isActive
+                      ? "text-foreground after:scale-x-100"
+                      : "text-silver after:scale-x-0 hover:text-foreground hover:after:scale-x-100"
+                  }`
+                }
               >
                 {link.label}
-              </Link>
+              </NavLink>
             ) : (
               <a
                 href={link.href}
-                className="text-[13px] font-medium tracking-wider text-silver uppercase hover:text-foreground transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-px after:bg-primary after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
+                className={`${desktopLinkClass} text-silver after:scale-x-0 hover:text-foreground hover:after:scale-x-100`}
               >
                 {link.label}
               </a>
@@ -76,14 +85,19 @@ const Navbar = () => {
         <div className="absolute top-[68px] left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border p-6 flex flex-col gap-4 lg:hidden">
           {navLinks.map((link) =>
             link.isRoute ? (
-              <Link
+              <NavLink
                 key={link.label}
                 to={link.href}
-                className="text-sm font-medium text-silver uppercase tracking-wider hover:text-foreground transition-colors"
+                end={link.href === "/"}
+                className={({ isActive }) =>
+                  `text-sm font-medium uppercase tracking-wider transition-colors ${
+                    isActive ? "text-foreground font-semibold" : "text-silver hover:text-foreground"
+                  }`
+                }
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
-              </Link>
+              </NavLink>
             ) : (
               <a
                 key={link.label}

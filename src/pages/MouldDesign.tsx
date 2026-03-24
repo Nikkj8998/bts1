@@ -19,7 +19,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 // Slide 1 — Project Running Process
-import processFlowImg from "@/assets/ppt/image1.jpg";
+import processFlowImg from "@/assets/endtoend-process.png";
 // Slide 2 — DFM
 import dfmImg from "@/assets/ppt/image3.png";
 // Slide 3 — Grill Mesh
@@ -213,7 +213,7 @@ const MouldDesign = () => {
             <div className="rounded-xl border border-primary-foreground/15 overflow-hidden bg-white shadow-[0_0_40px_hsl(var(--primary)/0.15)]">
               <img
                 src={processFlowImg}
-                alt="Project Running Process — RFQ to After Service flowchart"
+                alt="Batara End-to-End Molding Process Ecosystem — RFQ to After Service"
                 className="w-full h-auto block"
               />
             </div>
